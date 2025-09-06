@@ -1,51 +1,45 @@
-# ACAC XHTML + Rivets Rules (with external libs allowed)
+# ACAC XHTML + Rivets Rules (with external CSS/JS allowed)
 
 ## Ground Rules
-- **Static site**: Everything lives in `/site/`, versioned directly.  
-- **Pages**: `.html` files must be **XHTML well-formed**.  
-- **Frontend**: Rivets.js for state/binding.  
-- **External libraries/scripts are allowed**, but:
-  - Must be imported as `<script src="…"></script>` or `<link rel="stylesheet" … />`.  
-  - All script/link tags must be XHTML-valid (self-closed, quoted attrs).  
-  - No server-side runtime or build step required.  
-
-## XHTML Conventions
-- Root: `<!DOCTYPE html>` and `<html xmlns="http://www.w3.org/1999/xhtml" lang="en">`.  
-- Lowercase tags and attributes.  
-- Attributes always quoted.  
-- Void elements self-closed (`<br />`, `<img />`).  
-- `alt` required on `<img />`.  
-- Unique IDs per page.  
+- **Static site**: All code lives under `/site/`.
+- **Pages**: Must be **well-formed XHTML** (`<!DOCTYPE html>`, lowercase tags, quoted attrs, self-closed voids, `alt` on `<img />`, unique IDs).
+- **Frontend**: Rivets.js for bindings (`rv-*` only).  
+- **External libraries allowed**:
+  - CSS frameworks (e.g., **Tailwind CSS**, Bootstrap) may be included.  
+  - JS libraries (e.g., Rivets, Chart.js, Alpine.js) may be included.  
+  - Imports must use XHTML-valid tags:  
+    - Stylesheets: `<link rel="stylesheet" href="…" />`  
+    - Scripts: `<script src="…"></script>` (must have closing tag, not self-closed).  
 
 ## Rivets Usage
-- Bind state through `rivets.bind(document.getElementById('app'), state)`.  
-- Allowed binders: `rv-text`, `rv-html` (sanitized), `rv-if`, `rv-each-*`, `rv-on-*`.  
-- No inline event attributes like `onclick`; always use `rv-on-*`.  
+- Bind via `rivets.bind(document.getElementById('app'), state)`.
+- Allowed: `rv-text`, `rv-html` (sanitized), `rv-if`, `rv-each-*`, `rv-on-*`.
+- Inline event attributes (`onclick`, etc.) are forbidden.
 
 ## Process Rules
 ### Thin Slice
-- One component or page per PR.  
-- ≤10 files touched.  
-- No “big bang” refactors.  
+- One page OR one component per PR.
+- ≤10 files touched.
+- No global refactors in a single PR.
 
 ### JOA (Justifiable / Observable / Auditable)
-- **Justifiable**: 1–3 bullets tying the change to user outcomes.  
-- **Observable**: visual check, XHTML validation, Rivets binding works.  
-- **Auditable**: PR body includes spec, before/after screenshots, what rules applied.  
+- **Justifiable**: 1–3 bullets tied to outcomes.
+- **Observable**: screenshots, XHTML validation output, Rivets checks.
+- **Auditable**: PR includes spec, before/after evidence, and linked design doc if relevant.
 
 ### ADREI Workflow
-- **Analyze**: Confirm scope, list acceptance + observables.  
-- **Draft**: Plan edits (≤10 files).  
-- **Review**: Human QA verifies XHTML + behavior.  
-- **Edit**: Apply fixes.  
-- **Integrate**: Merge after checks pass and evidence attached.  
+- **Analyze** → scope, acceptance, observables.
+- **Draft** → plan edits, file list.
+- **Review** → human XHTML + Rivets QA.
+- **Edit** → apply fixes.
+- **Integrate** → merge after screenshots + validator output are attached.
 
 ## Observability
-- Manual XHTML validation (browser validator or XML parser).  
-- Screenshots/GIFs in PR for interactive behavior.  
-- PR template is the record of Thin Slice + JOA + ADREI evidence.  
+- XHTML validation required (browser validator or `xmllint`).
+- Attach before/after screenshots or GIFs for interactive behavior.
+- PR template serves as audit log.
 
 ## Memory Pointers
-- Design docs in `/docs/design/` (wireframes, specs, images).  
-- Tech references in `/docs/tech/`.  
-- All prompts should read these before starting `Analyze`.
+- Specs and wireframes live in `/docs/design/`.
+- Technical references live in `/docs/tech/`.
+- Prompts should consult these before Analyze.

@@ -16,12 +16,24 @@
 - Linked design doc / spec (if applicable)
 - Description of what rules were applied
 
+---
+
+### 📦 External Libraries
+List any **new CSS/JS libraries** added in this slice (CDN links, local includes, etc.).  
+- Example: `Tailwind CSS via <script src="https://cdn.tailwindcss.com"></script>`  
+- Example: `Chart.js via <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>`  
+- [ ] Verified each import uses XHTML-valid tags (`<link ... />`, `<script ...></script>`)
+
+---
+
 ### 🔄 ADREI Pass Log
 - Analyze: ✅ scope + acceptance listed
 - Draft: ✅ plan + file list shown
 - Review: ✅ QA notes (XHTML valid, Rivets tested)
 - Edit: ✅ fixes applied
 - Integrate: ✅ evidence attached (screenshots, validator output)
+
+---
 
 ### 📸 Evidence
 Attach before/after screenshots or GIFs here.
@@ -31,4 +43,4 @@ Attach before/after screenshots or GIFs here.
 ⚠️ Guardrails:
 - No inline event handlers (use `rv-on-*`)
 - XHTML strict syntax (quoted attrs, self-closed voids, unique IDs, `alt` on `<img />`)
-- External libraries allowed, but imports must be XHTML-valid (`<script>` closed, `<link />` self-closed)
+- External libraries allowed, but imports must be XHTML-valid

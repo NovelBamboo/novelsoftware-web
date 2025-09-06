@@ -1,7 +1,7 @@
 # ACAC XHTML + Rivets Site
 
 Static website scaffolded for the **ACAC** approach:  
-- **XHTML-strict pages** (`/site/`)  
+- **XHTML-strict pages** (`/`)  
 - **Rivets.js** for light interactivity (`rv-*` binders only)  
 - **External libraries allowed**, but imports must be XHTML-valid  
 - **Cline** agent configured for Thin Slice / JOA / ADREI workflow
