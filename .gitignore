@@ -1,0 +1,23 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor cruft
+.vscode/
+.idea/
+
+# Cline local memory (don’t share agent state)
+.cline/memory/
+
+# Environment secrets (if you use a .env for API keys)
+.env
+.env.local
+
+# Logs / temp
+*.log
+*.tmp
+*.swp
+*~
+
+# Build/preview scratch (if you ever generate temporary exports)
+_site/

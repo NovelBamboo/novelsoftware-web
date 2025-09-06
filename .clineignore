@@ -1,1 +1,16 @@
-'"$@"'
+# Ignore binary assets
+*.png
+*.jpg
+*.gif
+*.mp4
+*.psd
+
+# Ignore generated output
+dist/
+out/
+build/
+docs/design
+
+# Ignore dependency/vendor folders (if any creep in)
+node_modules/
+vendor/

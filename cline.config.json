@@ -1,1 +1,9 @@
-'"$@"'
+{
+  "model": "deepseek-chat",         
+  "apiKeyEnv": "DEEPSEEK_API_KEY",  
+  "contextStrategy": "embedding",
+  "memory": { "path": ".cline/memory" },
+  "tools": { "filesystem": true, "terminal": true },
+  "projectRoot": ".",
+  "systemPrompt": "Thin Slice only. JOA evidence. ADREI passes. ACAC subset: pure static files under /site (no build, no CMS, no CI). XHTML-well-formed HTML, Rivets rv-* only (no inline events). Refuse multi-scope."
+}
