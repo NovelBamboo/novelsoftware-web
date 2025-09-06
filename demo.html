@@ -1,0 +1,201 @@
+<!-- Black & white wireframe using Tailwind CSS + XHTML syntax -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novel Software — Wireframe</title>
+    <!-- Tailwind CDN (works in practice though not strictly XHTML validated) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      /* enforce black & white only */
+      @layer utilities {
+        .bw-bg { @apply bg-white; }
+        .bw-panel { @apply bg-gray-50; }
+        .bw-text { @apply text-black; }
+        .bw-muted { @apply text-gray-600; }
+        .bw-border { @apply border border-gray-300; }
+      }
+    </style>
+  </head>
+  <body class="bw-bg bw-text">
+    <!-- Header -->
+    <header class="bw-border bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bw-border" aria-hidden="true"></div>
+          <span class="font-semibold tracking-wide">Novel Software</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-6 text-sm bw-muted" aria-label="primary">
+          <a href="#why-not-built" class="hover:underline">Why Ideas Stall</a>
+          <a href="#why-novel" class="hover:underline">Why Us</a>
+          <a href="#pipeline" class="hover:underline">Pipeline</a>
+          <a href="#start" class="hover:underline">Get Started</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="#cta-get-started" class="px-3 py-2 bw-border rounded">Get Started</a>
+          <a href="#learn-more" class="px-3 py-2 rounded underline">Learn More</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="bw-panel border-t border-gray-200">
+      <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-bold leading-tight">Software development isn&#39;t hard — you&#39;re just intimidated.</h1>
+          <p class="mt-4 bw-muted">We don&#39;t need more coders. We need people with great ideas.</p>
+          <div class="mt-6 flex gap-3">
+            <a id="cta-get-started" href="#start" class="px-4 py-2 bw-border rounded">Get Started</a>
+            <a id="learn-more" href="#why-not-built" class="px-4 py-2 rounded underline">Learn More</a>
+          </div>
+        </div>
+        <div class="h-48 md:h-64 bw-border rounded flex items-center justify-center">
+          <span class="bw-muted text-sm">Placeholder: hero image / diagram</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Software Doesn&#39;t Get Built -->
+    <section id="why-not-built" class="max-w-6xl mx-auto px-4 py-14">
+      <h2 class="text-2xl font-semibold">Why Software Doesn&#39;t Get Built</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-6">
+        <div class="bw-border rounded p-4">
+          <div class="h-8 w-8 bw-border rounded mb-3" aria-hidden="true"></div>
+          <h3 class="font-medium">Intimidation</h3>
+          <p class="bw-muted text-sm mt-2">Folks get lost in jargon, burned by off‑the‑shelf tools, and fear wasting money.</p>
+        </div>
+        <div class="bw-border rounded p-4">
+          <div class="h-8 w-8 bw-border rounded mb-3" aria-hidden="true"></div>
+          <h3 class="font-medium">Technical Hurdles</h3>
+          <p class="bw-muted text-sm mt-2">Great ideas die because implementation feels out of reach.</p>
+        </div>
+        <div class="bw-border rounded p-4">
+          <div class="h-8 w-8 bw-border rounded mb-3" aria-hidden="true"></div>
+          <h3 class="font-medium">Poor Communication</h3>
+          <p class="bw-muted text-sm mt-2">Agencies and devs miss the vision; translation gaps derail progress.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Novel Software -->
+    <section id="why-novel" class="bw-panel border-y border-gray-200">
+      <div class="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl font-semibold">Why Novel Software</h2>
+          <ul class="mt-4 space-y-3 list-disc pl-5">
+            <li class="bw-muted">Decades in startups &amp; enterprise delivery.</li>
+            <li class="bw-muted">You don&#39;t need to learn to code to ship real software.</li>
+            <li class="bw-muted">We trust non‑technical owners to align software with real needs.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-medium">AI‑Powered Delivery</h3>
+          <p class="bw-muted mt-2">We can be there without being there. AI distills experience into guides, playbooks, and custom GPTs.</p>
+          <div class="h-32 bw-border rounded mt-4 flex items-center justify-center">
+            <span class="bw-muted text-sm">Placeholder: AI workflow graphic</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Framework Pipeline -->
+    <section id="pipeline" class="max-w-6xl mx-auto px-4 py-14">
+      <h2 class="text-2xl font-semibold">Framework Pipeline</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-6">
+        <div class="bw-border rounded p-4">
+          <div class="text-sm uppercase tracking-wide bw-muted">Clarify</div>
+          <p class="bw-muted text-sm mt-2">Define, align, and validate ideas with the NSK 5‑Step Clarify Method.</p>
+          <div class="h-20 bw-border rounded mt-3 flex items-center justify-center">
+            <span class="bw-muted text-xs">Low‑fi card</span>
+          </div>
+        </div>
+        <div class="bw-border rounded p-4">
+          <div class="text-sm uppercase tracking-wide bw-muted">Collaborate</div>
+          <p class="bw-muted text-sm mt-2">Measure twice, cut once. From prototype to prompts.</p>
+          <div class="h-20 bw-border rounded mt-3 flex items-center justify-center">
+            <span class="bw-muted text-xs">Low‑fi card</span>
+          </div>
+        </div>
+        <div class="bw-border rounded p-4">
+          <div class="text-sm uppercase tracking-wide bw-muted">Code</div>
+          <p class="bw-muted text-sm mt-2">Let AI lift the heavy parts. Specs &amp; workflows deliver software.</p>
+          <div class="h-20 bw-border rounded mt-3 flex items-center justify-center">
+            <span class="bw-muted text-xs">Low‑fi card</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Ways to Get Started -->
+    <section id="start" class="bw-panel border-y border-gray-200">
+      <div class="max-w-6xl mx-auto px-4 py-14">
+        <h2 class="text-2xl font-semibold">3 Ways to Get Started</h2>
+        <ol class="mt-6 grid md:grid-cols-3 gap-6 list-decimal pl-5">
+          <li class="bw-border rounded p-4">
+            <div class="font-medium">Get the 5‑Step Cheat Sheet (free)</div>
+            <p class="bw-muted text-sm mt-2">A simple roadmap from idea to vision, mission, and strategy.</p>
+            <div class="mt-4">
+              <a href="#" class="px-3 py-2 bw-border rounded inline-block">Download</a>
+            </div>
+          </li>
+          <li class="bw-border rounded p-4">
+            <div class="font-medium">Access Custom GPTs</div>
+            <p class="bw-muted text-sm mt-2">Ready‑to‑use assistants for non‑technical owners. No coding.</p>
+            <div class="mt-4">
+              <a href="#" class="px-3 py-2 bw-border rounded inline-block">Open</a>
+            </div>
+          </li>
+          <li class="bw-border rounded p-4">
+            <div class="font-medium">Join the Novel Newsletter</div>
+            <p class="bw-muted text-sm mt-2">Front‑row seat to what works in modern software &amp; AI.</p>
+            <div class="mt-4">
+              <a href="#" class="px-3 py-2 bw-border rounded inline-block">Subscribe</a>
+            </div>
+          </li>
+        </ol>
+        <div class="mt-8 h-24 bw-border rounded flex items-center justify-center">
+          <span class="bw-muted text-sm">Placeholder: newsletter signup block</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto px-4 py-10 text-sm bw-muted">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div>
+          <div class="font-medium text-black">Novel Software</div>
+          <p class="mt-2">From idea to working software—without learning to code.</p>
+        </div>
+        <div>
+          <div class="font-medium text-black">Explore</div>
+          <ul class="mt-2 space-y-2">
+            <li><a href="#why-not-built" class="hover:underline">Why Ideas Stall</a></li>
+            <li><a href="#why-novel" class="hover:underline">Why Us</a></li>
+            <li><a href="#pipeline" class="hover:underline">Pipeline</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-medium text-black">Get Started</div>
+          <ul class="mt-2 space-y-2">
+            <li><a href="#start" class="hover:underline">Cheat Sheet</a></li>
+            <li><a href="#start" class="hover:underline">Custom GPTs</a></li>
+            <li><a href="#start" class="hover:underline">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-gray-200 pt-6 flex items-center justify-between">
+        <p>&#169; <span id="year">2025</span> Novel Software.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      // simple year injection; optional for wireframe
+      (function () { var y = new Date().getFullYear(); var el = document.getElementById('year'); if (el) { el.textContent = y; } })();
+    </script>
+  </body>
+</html>
