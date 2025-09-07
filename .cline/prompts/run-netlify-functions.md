@@ -63,18 +63,3 @@ node -e "require('./netlify/functions/hello').handler().then(console.log)"
   That just means Netlify can’t auto-launch your browser — you still use the forwarded or live URL.
 
 * Codespaces → open the **Ports** panel, set port 3000 to Public, and copy the generated URL.
-
----
-
-## Outcome
-
-You can now test Netlify Functions directly from Codespaces (or any dev container) **before** committing or deploying.
-
-```
-
----
-
-✅ Save this as `.cline/prompts/run-netlify-functions.md` and you’ll always have the workflow handy.  
-
-Do you also want me to combine this with your **setup prompt** so Cline can both scaffold the files *and* start the dev server automatically in one run?
-```

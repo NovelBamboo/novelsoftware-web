@@ -5,6 +5,7 @@ Thumbs.db
 # Editor cruft
 .vscode/
 .idea/
+node_modules
 
 # Cline local memory (don’t share agent state)
 .cline/memory/
