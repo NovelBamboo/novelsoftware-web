@@ -53,3 +53,7 @@ and it will generate the repo skeleton.
 
 Do you want me to also include instructions in the same prompt for automatically committing + pushing to GitHub (so the deploy triggers immediately), or do you prefer to keep that as a manual step?
 ```
+### 4. Install Netlify CLI
+```
+npm install -g netlify-cli
+````

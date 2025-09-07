@@ -21,3 +21,6 @@ Thumbs.db
 
 # Build/preview scratch (if you ever generate temporary exports)
 _site/
+
+# Local Netlify folder
+.netlify
