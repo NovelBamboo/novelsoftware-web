@@ -1,0 +1,292 @@
+<!-- Barrier Cards Component -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrier Cards Component</title>
+    <style>
+        :root {
+            /* Design Tokens - Light Mode */
+            --color-page-bg: #FAFAFB;
+            --color-card-bg: #142A6A;
+            --color-heading: #111417;
+            --color-card-title: #FFFFFF;
+            --color-card-body: #FFFFFF;
+            --color-focus: #2F6BFF;
+            --color-card-bg-active-overlay: rgba(255, 255, 255, 0.04);
+            
+            --font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            --h1-size: clamp(28px, 4vw, 56px);
+            --h1-line-height: 1.1;
+            --h1-weight: 800;
+            --h1-tracking: -0.01em;
+            --h2-size: clamp(18px, 2.2vw, 24px);
+            --h2-line-height: 1.25;
+            --h2-weight: 700;
+            --body-size: clamp(15px, 1.8vw, 18px);
+            --body-line-height: 1.6;
+            --body-weight: 400;
+            
+            --space-container-y: 72px;
+            --space-container-x: 24px;
+            --space-grid-gap: 24px;
+            --space-card-pad: 24px;
+            --space-title-gap: 8px;
+            
+            --radius-card: 12px;
+            
+            --shadow-rest: 0 2px 6px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.16);
+            
+            --motion-duration: 160ms;
+            --motion-easing: cubic-bezier(0.2, 0, 0.2, 1);
+            
+            --breakpoint-sm: 640px;
+            --breakpoint-md: 832px;
+            --breakpoint-lg: 1024px;
+            --breakpoint-xl: 1280px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-page-bg: #0E0F13;
+                --color-heading: #FFFFFF;
+                --color-card-bg: #1C377F;
+                --color-focus: #4C79FF;
+            }
+        }
+
+        .barrier-cards-section {
+            background-color: var(--color-page-bg);
+            padding: var(--space-container-y) var(--space-container-x);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .barrier-cards-section[hidden] {
+            display: none;
+        }
+
+        .barrier-cards-heading {
+            font-family: var(--font-family);
+            font-size: var(--h1-size);
+            font-weight: var(--h1-weight);
+            line-height: var(--h1-line-height);
+            letter-spacing: var(--h1-tracking);
+            color: var(--color-heading);
+            margin: 0 0 48px 0;
+            text-align: left;
+        }
+
+        @media (max-width: 640px) {
+            .barrier-cards-heading {
+                text-align: center;
+            }
+        }
+
+        .barrier-cards-grid {
+            display: grid;
+            gap: var(--space-grid-gap);
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .barrier-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .barrier-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Single card layout */
+        .barrier-cards-grid[data-cards-count="1"] {
+            grid-template-columns: 1fr;
+            justify-items: center;
+        }
+
+        .barrier-cards-grid[data-cards-count="1"] .barrier-card {
+            max-width: 640px;
+        }
+
+        .barrier-card {
+            background-color: var(--color-card-bg);
+            color: var(--color-card-title);
+            padding: var(--space-card-pad);
+            border-radius: var(--radius-card);
+            min-height: 240px;
+            box-shadow: var(--shadow-rest);
+            transition: all var(--motion-duration) var(--motion-easing);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .barrier-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .barrier-card:active {
+            transform: translateY(0);
+            background-image: linear-gradient(var(--color-card-bg-active-overlay), var(--color-card-bg-active-overlay));
+        }
+
+        .barrier-card:focus {
+            outline: 2px solid var(--color-focus);
+            outline-offset: 2px;
+        }
+
+        .barrier-card__title {
+            font-family: var(--font-family);
+            font-size: var(--h2-size);
+            font-weight: var(--h2-weight);
+            line-height: var(--h2-line-height);
+            color: var(--color-card-title);
+            margin: 0 0 var(--space-title-gap) 0;
+        }
+
+        .barrier-card__title[data-truncated]::after {
+            content: "...";
+        }
+
+        .barrier-card__body {
+            font-family: var(--font-family);
+            font-size: var(--body-size);
+            font-weight: var(--body-weight);
+            line-height: var(--body-line-height);
+            color: var(--color-card-body);
+            margin: 0;
+            flex: 1;
+        }
+
+        /* Link card styles */
+        .barrier-card--link {
+            text-decoration: none;
+            cursor: pointer;
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .barrier-card--link:hover,
+        .barrier-card--link:focus {
+            text-decoration: none;
+        }
+
+        /* RTL support */
+        [dir="rtl"] .barrier-cards-grid {
+            grid-auto-flow: dense;
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .barrier-card {
+                transition: none;
+            }
+            
+            .barrier-card:hover {
+                transform: none;
+            }
+        }
+
+        /* High contrast support */
+        @media (prefers-contrast: high) {
+            .barrier-card {
+                border: 2px solid currentColor;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="barrier-cards-section" aria-labelledby="barrier-cards-heading">
+        <h1 id="barrier-cards-heading" class="barrier-cards-heading">Why Software Doesn't Get Built</h1>
+        
+        <div class="barrier-cards-grid" data-cards-count="3">
+            <article class="barrier-card">
+                <h2 class="barrier-card__title">Intimidation</h2>
+                <p class="barrier-card__body">Folks get lost in jargon, burned by off-the-shelf tools, and fear wasting money on solutions that don't fit their unique needs.</p>
+            </article>
+            
+            <article class="barrier-card">
+                <h2 class="barrier-card__title">Technical Hurdles</h2>
+                <p class="barrier-card__body">Great ideas die because implementation feels out of reach. The gap between vision and execution stops progress before it starts.</p>
+            </article>
+            
+            <article class="barrier-card">
+                <h2 class="barrier-card__title">Poor Communication</h2>
+                <p class="barrier-card__body">Agencies and developers often miss the vision. Translation gaps between technical and non-technical teams derail progress.</p>
+            </article>
+        </div>
+    </section>
+
+    <script>
+        // State management for local cache
+        (function() {
+            'use strict';
+            
+            const COMPONENT_KEY = 'barrier-cards-state';
+            
+            // Initialize component state
+            function initComponentState() {
+                const savedState = localStorage.getItem(COMPONENT_KEY);
+                const cardsGrid = document.querySelector('.barrier-cards-grid');
+                
+                if (cardsGrid && cardsGrid.children.length > 0) {
+                    cardsGrid.setAttribute('data-cards-count', cardsGrid.children.length);
+                    
+                    // Handle edge cases
+                    if (cardsGrid.children.length === 0) {
+                        document.querySelector('.barrier-cards-section').hidden = true;
+                    }
+                }
+                
+                // Check for long titles and apply truncation
+                const cardTitles = document.querySelectorAll('.barrier-card__title');
+                cardTitles.forEach(title => {
+                    if (title.scrollHeight > title.offsetHeight * 1.5) {
+                        title.setAttribute('data-truncated', 'true');
+                        title.title = title.textContent;
+                    }
+                });
+            }
+            
+            // Save view state for telemetry
+            function trackView() {
+                const hasViewed = sessionStorage.getItem(`${COMPONENT_KEY}-viewed`);
+                if (!hasViewed) {
+                    // Emit telemetry event (would integrate with analytics service)
+                    console.log('Barrier cards section viewed');
+                    sessionStorage.setItem(`${COMPONENT_KEY}-viewed`, 'true');
+                }
+            }
+            
+            // Initialize on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initComponentState);
+            } else {
+                initComponentState();
+            }
+            
+            // Track when component comes into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        trackView();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const section = document.querySelector('.barrier-cards-section');
+            if (section) {
+                observer.observe(section);
+            }
+            
+        })();
+    </script>
+</body>
+</html>

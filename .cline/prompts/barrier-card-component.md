@@ -1,6 +1,6 @@
+
 Generate in `/component/barrier-card-component.html`
 Manage any dynamic state in browser local cache
-Use canvas to Generate code for XHTML, Tailwind, Rivets js component:
 # Component Design Spec — “Barrier Cards” Section
 
 This spec turns your slide (“Why Software Doesn’t Get Built”) into a rigorously defined, production-ready web component. It inherits the structure and conventions from your existing NCC design-spec patterns.&#x20;
