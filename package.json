@@ -1,0 +1,18 @@
+{
+  "name": "novel-consulting-web",
+  "version": "1.0.0",
+  "description": "Static website for Novel Consulting, NKOS, and WRO Drafting.",
+  "main": "index.js",
+  "dependencies": {
+    "pg": "^8.12.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "check": "node scripts/validate-site.js",
+    "test": "npm run check"
+  },
+  "author": "",
+  "license": "ISC"
+}

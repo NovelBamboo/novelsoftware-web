@@ -5,6 +5,7 @@ Thumbs.db
 # Editor cruft
 .vscode/
 .idea/
+node_modules
 
 # Cline local memory (don’t share agent state)
 .cline/memory/
@@ -24,3 +25,11 @@ _site/
 
 # Local Netlify folder
 .netlify
+.todos/
+.sidecar/
+.sidecar-agent
+.sidecar-task
+.sidecar-pr
+.sidecar-start.sh
+.sidecar-base
+.td-root

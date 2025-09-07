@@ -1,201 +1,40 @@
-<!-- Black & white wireframe using Tailwind CSS + XHTML syntax -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Novel Software Development</title>
-    <!-- Tailwind CDN (works in practice though not strictly XHTML validated) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style type="text/tailwindcss">
-      /* enforce black & white only */
-      @layer utilities {
-        .bw-bg { @apply bg-white; }
-        .bw-panel { @apply bg-gray-50; }
-        .bw-text { @apply text-black; }
-        .bw-muted { @apply text-gray-600; }
-        .bw-border { @apply border border-gray-300; }
-      }
-    </style>
-  </head>
-  <body class="bw-bg bw-text">
-    <!-- Header -->
-    <header class="bw-border bg-white">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-full bw-border" aria-hidden="true"></div>
-          <span class="font-semibold tracking-wide">Novel Software</span>
-        </div>
-        <nav class="hidden md:flex items-center gap-6 text-sm bw-muted" aria-label="primary">
-          <a href="#why-not-built" class="hover:underline">Why Ideas Stall</a>
-          <a href="#why-novel" class="hover:underline">Why Us</a>
-          <a href="#pipeline" class="hover:underline">Pipeline</a>
-          <a href="#start" class="hover:underline">Get Started</a>
-        </nav>
-        <div class="flex items-center gap-3">
-          <a href="#cta-get-started" class="px-3 py-2 bw-border rounded">Get Started</a>
-          <a href="#learn-more" class="px-3 py-2 rounded underline">Learn More</a>
-        </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Novel Consulting — Knowledge, Structured</title>
+  <meta name="description" content="Novel Consulting turns scattered intellectual property into governed knowledge operating systems for expert-led businesses and authors." />
+  <meta property="og:title" content="Novel Consulting — Knowledge, Structured" />
+  <meta property="og:description" content="Structure your knowledge. Amplify your expertise." />
+  <meta property="og:type" content="website" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/public/assets/site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Novel Consulting","description":"Structured intelligence for creative and expert-led work."}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary">
+      <a class="brand" href="/">Novel Consulting</a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-links">Menu</button>
+      <div class="nav-links" id="primary-links" data-nav-links data-open="false">
+        <a href="/">Platform</a><a href="/nkos.html">NKOS</a><a href="/wro-drafting.html">WRO Drafting</a><a href="/method.html">Method</a><a href="/evidence.html">Evidence</a><a class="button" href="/start.html">Start</a>
       </div>
-    </header>
-
-    <!-- Hero -->
-    <section id="hero" class="bw-panel border-t border-gray-200">
-      <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h1 class="text-3xl md:text-4xl font-bold leading-tight">Software development isn&#39;t hard — you&#39;re just intimidated.</h1>
-          <p class="mt-4 bw-muted">We don&#39;t need more coders. We need people with great ideas.</p>
-          <div class="mt-6 flex gap-3">
-            <a id="cta-get-started" href="#start" class="px-4 py-2 bw-border rounded">Get Started</a>
-            <a id="learn-more" href="#why-not-built" class="px-4 py-2 rounded underline">Learn More</a>
-          </div>
-        </div>
-        <div class="h-48 md:h-64 bw-border rounded flex items-center justify-center">
-          <span class="bw-muted text-sm">Placeholder: hero image / diagram</span>
-        </div>
-      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero shell">
+      <div><p class="eyebrow">Novel Knowledge Operating System</p><h1>Structure your knowledge.<br />Amplify your expertise.</h1><p class="lede">Turn scattered intellectual property into a governed system you can retrieve, reuse, and trust.</p><a class="button" href="/start.html">Book a Knowledge Audit <span aria-hidden="true">→</span></a></div>
     </section>
-
-    <!-- Why Software Doesn&#39;t Get Built -->
-    <section id="why-not-built" class="max-w-6xl mx-auto px-4 py-14">
-      <h2 class="text-2xl font-semibold">Why Software Doesn&#39;t Get Built</h2>
-      <div class="grid md:grid-cols-3 gap-6 mt-6">
-        <div class="bw-border rounded p-4">
-          <div class="h-8 w-8 bw-border rounded mb-3" aria-hidden="true"></div>
-          <h3 class="font-medium">Intimidation</h3>
-          <p class="bw-muted text-sm mt-2">Folks get lost in jargon, burned by off‑the‑shelf tools, and fear wasting money.</p>
-        </div>
-        <div class="bw-border rounded p-4">
-          <div class="h-8 w-8 bw-border rounded mb-3" aria-hidden="true"></div>
-          <h3 class="font-medium">Technical Hurdles</h3>
-          <p class="bw-muted text-sm mt-2">Great ideas die because implementation feels out of reach.</p>
-        </div>
-        <div class="bw-border rounded p-4">
-          <div class="h-8 w-8 bw-border rounded mb-3" aria-hidden="true"></div>
-          <h3 class="font-medium">Poor Communication</h3>
-          <p class="bw-muted text-sm mt-2">Agencies and devs miss the vision; translation gaps derail progress.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Novel Software -->
-    <section id="why-novel" class="bw-panel border-y border-gray-200">
-      <div class="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-8 items-start">
-        <div>
-          <h2 class="text-2xl font-semibold">Why Novel Software</h2>
-          <ul class="mt-4 space-y-3 list-disc pl-5">
-            <li class="bw-muted">Decades in startups &amp; enterprise delivery.</li>
-            <li class="bw-muted">You don&#39;t need to learn to code to ship real software.</li>
-            <li class="bw-muted">We trust non‑technical owners to align software with real needs.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-medium">AI‑Powered Delivery</h3>
-          <p class="bw-muted mt-2">We can be there without being there. AI distills experience into guides, playbooks, and custom GPTs.</p>
-          <div class="h-32 bw-border rounded mt-4 flex items-center justify-center">
-            <span class="bw-muted text-sm">Placeholder: AI workflow graphic</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Framework Pipeline -->
-    <section id="pipeline" class="max-w-6xl mx-auto px-4 py-14">
-      <h2 class="text-2xl font-semibold">Framework Pipeline</h2>
-      <div class="grid md:grid-cols-3 gap-6 mt-6">
-        <div class="bw-border rounded p-4">
-          <div class="text-sm uppercase tracking-wide bw-muted">Clarify</div>
-          <p class="bw-muted text-sm mt-2">Define, align, and validate ideas with the NSK 5‑Step Clarify Method.</p>
-          <div class="h-20 bw-border rounded mt-3 flex items-center justify-center">
-            <span class="bw-muted text-xs">Low‑fi card</span>
-          </div>
-        </div>
-        <div class="bw-border rounded p-4">
-          <div class="text-sm uppercase tracking-wide bw-muted">Collaborate</div>
-          <p class="bw-muted text-sm mt-2">Measure twice, cut once. From prototype to prompts.</p>
-          <div class="h-20 bw-border rounded mt-3 flex items-center justify-center">
-            <span class="bw-muted text-xs">Low‑fi card</span>
-          </div>
-        </div>
-        <div class="bw-border rounded p-4">
-          <div class="text-sm uppercase tracking-wide bw-muted">Code</div>
-          <p class="bw-muted text-sm mt-2">Let AI lift the heavy parts. Specs &amp; workflows deliver software.</p>
-          <div class="h-20 bw-border rounded mt-3 flex items-center justify-center">
-            <span class="bw-muted text-xs">Low‑fi card</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3 Ways to Get Started -->
-    <section id="start" class="bw-panel border-y border-gray-200">
-      <div class="max-w-6xl mx-auto px-4 py-14">
-        <h2 class="text-2xl font-semibold">3 Ways to Get Started</h2>
-        <ol class="mt-6 grid md:grid-cols-3 gap-6 list-decimal pl-5">
-          <li class="bw-border rounded p-4">
-            <div class="font-medium">Get the 5‑Step Cheat Sheet (free)</div>
-            <p class="bw-muted text-sm mt-2">A simple roadmap from idea to vision, mission, and strategy.</p>
-            <div class="mt-4">
-              <a href="#" class="px-3 py-2 bw-border rounded inline-block">Download</a>
-            </div>
-          </li>
-          <li class="bw-border rounded p-4">
-            <div class="font-medium">Access Custom GPTs</div>
-            <p class="bw-muted text-sm mt-2">Ready‑to‑use assistants for non‑technical owners. No coding.</p>
-            <div class="mt-4">
-              <a href="#" class="px-3 py-2 bw-border rounded inline-block">Open</a>
-            </div>
-          </li>
-          <li class="bw-border rounded p-4">
-            <div class="font-medium">Join the Novel Newsletter</div>
-            <p class="bw-muted text-sm mt-2">Front‑row seat to what works in modern software &amp; AI.</p>
-            <div class="mt-4">
-              <a href="#" class="px-3 py-2 bw-border rounded inline-block">Subscribe</a>
-            </div>
-          </li>
-        </ol>
-        <div class="mt-8 h-24 bw-border rounded flex items-center justify-center">
-          <span class="bw-muted text-sm">Placeholder: newsletter signup block</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="max-w-6xl mx-auto px-4 py-10 text-sm bw-muted">
-      <div class="grid md:grid-cols-3 gap-6">
-        <div>
-          <div class="font-medium text-black">Novel Software</div>
-          <p class="mt-2">From idea to working software—without learning to code.</p>
-        </div>
-        <div>
-          <div class="font-medium text-black">Explore</div>
-          <ul class="mt-2 space-y-2">
-            <li><a href="#why-not-built" class="hover:underline">Why Ideas Stall</a></li>
-            <li><a href="#why-novel" class="hover:underline">Why Us</a></li>
-            <li><a href="#pipeline" class="hover:underline">Pipeline</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-medium text-black">Get Started</div>
-          <ul class="mt-2 space-y-2">
-            <li><a href="#start" class="hover:underline">Cheat Sheet</a></li>
-            <li><a href="#start" class="hover:underline">Custom GPTs</a></li>
-            <li><a href="#start" class="hover:underline">Newsletter</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="mt-8 border-t border-gray-200 pt-6 flex items-center justify-between">
-        <p>&#169; <span id="year">2025</span> Novel Software.</p>
-        <div class="flex items-center gap-4">
-          <a href="#" class="hover:underline">Privacy</a>
-          <a href="#" class="hover:underline">Terms</a>
-        </div>
-      </div>
-    </footer>
-
-    <script type="text/javascript">
-      // simple year injection; optional for wireframe
-      (function () { var y = new Date().getFullYear(); var el = document.getElementById('year'); if (el) { el.textContent = y; } })();
-    </script>
-  </body>
+    <section class="chapter"><div class="shell"><span class="number">01 / THE PROBLEM</span><h2>Stop recreating work.</h2><p class="chapter-copy">Your most valuable knowledge already exists. It is simply trapped across documents, slides, conversations, and memory.</p><div class="before-after"><div class="state"><h3>Scattered</h3><ul><li>Documents and drives</li><li>Slides and templates</li><li>Emails and conversations</li><li>Individual memory</li></ul></div><div class="transform-arrow" aria-hidden="true">→</div><div class="state after"><h3>Operational</h3><ul><li>One trusted source</li><li>Reusable workflows</li><li>Approved knowledge</li><li>Traceable delivery</li></ul></div></div></div></section>
+    <section class="chapter"><div class="shell"><span class="number">02 / THE CHANGE</span><h2>Knowledge that works like a system.</h2><div class="outcomes"><article class="outcome"><h3>Find everything.</h3><p>Retrieve the smallest relevant set of approved knowledge.</p></article><article class="outcome"><h3>Reuse everything.</h3><p>Assemble new work without rebuilding what already exists.</p></article><article class="outcome"><h3>Trust every output.</h3><p>Keep sources visible and consequential decisions human.</p></article></div></div></section>
+    <section class="chapter"><div class="shell"><span class="number">03 / THE SYSTEM</span><h2>From source to deliverable.</h2><div class="system-flow" aria-label="Knowledge operating system flow"><div><strong>Sources</strong><span>Documents, slides, notes, manuscripts</span></div><div><strong>Structure</strong><span>Relationships, authority, status</span></div><div><strong>Retrieval</strong><span>Focused, approved context</span></div><div><strong>Workflow</strong><span>A bounded production task</span></div><div><strong>Delivery</strong><span>Human-reviewed, traceable work</span></div></div></div></section>
+    <section class="chapter"><div class="shell"><span class="number">04 / PRODUCTS</span><h2>Choose your operating system.</h2><div class="product-grid"><a class="product" href="/nkos.html"><small>For expert-led businesses</small><div><h3>NKOS</h3><p>Turn years of expertise into a reusable system for proposals, workshops, presentations, and client delivery.</p><div class="arrow">See NKOS →</div></div></a><a class="product wro" href="/wro-drafting.html"><small>For authors</small><div><h3>WRO Drafting</h3><p>Build a reliable writers' room around your story, voice, canon, and creative authority.</p><div class="arrow">Explore WRO →</div></div></a></div></div></section>
+    <section class="chapter"><div class="shell"><span class="number">05 / IMPLEMENTATION</span><h2>Installed in four clear stages.</h2><div class="workflow"><article class="workflow-step"><div><h3>Knowledge Audit</h3><p>See where knowledge lives, where value is lost, and which workflow matters first.</p></div></article><article class="workflow-step"><div><h3>Foundation Build</h3><p>Create a governed, navigable source of truth owned by you.</p></div></article><article class="workflow-step"><div><h3>Workflow Installation</h3><p>Install focused retrieval and production workflows around valuable work.</p></div></article><article class="workflow-step"><div><h3>Knowledge Operations</h3><p>Keep the system current, useful, and reliable over time.</p></div></article></div><a class="button" href="/method.html">See the method →</a></div></section>
+    <section class="chapter"><div class="shell reading"><span class="number">06 / START</span><h2>Begin with one valuable workflow.</h2><p class="chapter-copy">A Knowledge Audit identifies the smallest system that can create an observable result.</p><a class="button" href="/start.html">Book a Knowledge Audit →</a></div></section>
+  </main>
+  <footer class="site-footer"><div class="shell"><div class="footer-grid"><strong>Novel Consulting</strong><div class="footer-links"><a href="/nkos.html">NKOS</a><a href="/wro-drafting.html">WRO Drafting</a><a href="/method.html">Method</a><a href="/evidence.html">Evidence</a><a href="/start.html">Start</a></div></div><p class="fine-print">© <span data-year>2026</span> Novel Consulting. Structured intelligence for creative and expert-led work.</p></div></footer>
+  <script src="/public/assets/site.js" defer></script>
+</body>
 </html>
