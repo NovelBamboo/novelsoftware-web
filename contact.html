@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Novel Consulting</title>
+  <meta name="description" content="Start a conversation with Novel Consulting or schedule a one-hour consultation." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/public/assets/site.css" />
+</head>
+<body class="original-home contact-home">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" class="original-frame">
+    <figure class="original-visual contact-visual">
+      <img src="/public/assets/images/office.jpg" width="1999" height="1333" alt="A team collaborating in a bright workspace" fetchpriority="high" />
+      <figcaption>Good work begins with a clear conversation.</figcaption>
+    </figure>
+
+    <section class="original-panel contact-panel" aria-labelledby="contact-title">
+      <div class="original-masthead">
+        <a class="original-brand" href="/" aria-label="Novel Consulting home">Novel<span aria-hidden="true">.</span></a>
+        <nav class="original-nav" aria-label="Primary"><a href="/">Home</a><a href="/nkos.html">NKOS</a><a href="/wro-drafting.html">WRO Drafting</a><a href="/contact.html" aria-current="page">Contact</a></nav>
+      </div>
+
+      <div class="contact-content">
+        <div class="contact-heading">
+          <div class="original-rule" aria-hidden="true"></div>
+          <h1 id="contact-title">Tell us what<br />you are building.</h1>
+          <p>Share the work, the constraint, and what a useful outcome looks like.</p>
+        </div>
+
+        <div class="contact-options">
+          <div class="form-success" data-form-success hidden tabindex="-1">
+            <strong>Message received.</strong>
+            <span>We will be in touch soon.</span>
+          </div>
+
+          <form class="contact-form" name="contact" method="POST" action="/contact.html?sent=true" data-netlify="true" netlify-honeypot="company">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="honeypot"><label>Do not fill this out: <input name="company" autocomplete="off" tabindex="-1" /></label></p>
+
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" maxlength="120" required />
+
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" maxlength="160" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" maxlength="5000" required></textarea>
+
+            <button class="original-cta contact-submit" type="submit">Send message <span aria-hidden="true">→</span></button>
+          </form>
+
+          <div class="contact-calendar">
+            <p>Prefer to talk?</p>
+            <a href="https://calendly.com/novelbamboo/60min">Schedule a 60-minute conversation <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/public/assets/site.js" defer></script>
+</body>
+</html>

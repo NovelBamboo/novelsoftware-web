@@ -25,6 +25,9 @@ _site/
 
 # Local Netlify folder
 .netlify
+.env
+.env.*
+!.env.example
 .todos/
 .sidecar/
 .sidecar-agent

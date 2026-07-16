@@ -11,4 +11,11 @@
   }
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
+
+  var success = document.querySelector('[data-form-success]');
+  if (success && new URLSearchParams(window.location.search).get('sent') === 'true') {
+    success.hidden = false;
+    success.focus();
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
 }());

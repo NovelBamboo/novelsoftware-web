@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const pages = ['index.html', 'nkos.html', 'wro-drafting.html'];
+const pages = ['index.html', 'nkos.html', 'wro-drafting.html', 'contact.html'];
 const obsolete = [/Novel Software/i, /software development isn.t hard/i, /Custom GPTs/i, /5.Step Cheat Sheet/i];
 const errors = [];
 
@@ -28,8 +28,17 @@ for (const page of pages) {
   }
 }
 
+const contact = fs.readFileSync(path.join(root, 'contact.html'), 'utf8');
+for (const marker of ['name="contact"', 'data-netlify="true"', 'name="name"', 'name="subject"', 'name="message"', 'required']) {
+  if (!contact.includes(marker)) errors.push(`contact.html: missing ${marker}`);
+}
+
+const deliveryFunction = path.join(root, 'netlify/functions/submission-created.js');
+if (!fs.existsSync(deliveryFunction)) errors.push('Netlify form delivery function is missing');
+else if (!fs.readFileSync(deliveryFunction, 'utf8').includes('process.env.RESEND')) errors.push('Netlify form delivery function must use RESEND environment variable');
+
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log(`Validated ${pages.length} pages, local references, and copy exclusions.`);
+console.log(`Validated ${pages.length} pages, contact delivery, local references, and copy exclusions.`);
