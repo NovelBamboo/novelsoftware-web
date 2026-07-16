@@ -1,10 +1,8 @@
-'use strict';
-
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 const CONTACT_TO_EMAIL = 'noel@novelbamboo.com';
-const CONTACT_FROM_EMAIL = 'Novel Consulting <contact@novelbamboo.com>';
+const CONTACT_FROM_EMAIL = 'Novel Consulting <onboarding@resend.dev>';
 
-function escapeHtml(value) {
+export function escapeHtml(value) {
   return String(value)
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
@@ -13,43 +11,20 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
-function parseSubmission(event) {
-  const body = JSON.parse(event.body || '{}');
-  const payload = body.payload || {};
-  const data = payload.data || {};
-
+export function parseSubmission(event) {
+  const data = event?.data || {};
   return {
-    id: payload.id || body.id || '',
-    formName: payload.form_name || data['form-name'] || '',
+    id: event?.submission?.id || event?.id || '',
+    formName: data['form-name'] || '',
     name: String(data.name || '').trim(),
     subject: String(data.subject || '').trim(),
     message: String(data.message || '').trim()
   };
 }
 
-exports.handler = async function handler(event) {
-  let submission;
-  try {
-    submission = parseSubmission(event);
-  } catch (error) {
-    console.error('Contact submission payload could not be parsed.', error);
-    return { statusCode: 400, body: 'Invalid submission payload.' };
-  }
-
-  if (submission.formName !== 'contact') {
-    return { statusCode: 200, body: 'Submission ignored.' };
-  }
-
-  if (!submission.name || !submission.subject || !submission.message) {
-    console.error('Contact submission is missing a required field.', { id: submission.id });
-    return { statusCode: 422, body: 'Missing required contact fields.' };
-  }
-
+export async function deliverContactEmail(submission, fetchImpl = fetch) {
   const apiKey = process.env.RESEND;
-  if (!apiKey) {
-    console.error('RESEND is not configured for the Netlify Function.');
-    return { statusCode: 500, body: 'Email delivery is not configured.' };
-  }
+  if (!apiKey) throw new Error('RESEND is not configured for the Netlify Function.');
 
   const safeName = escapeHtml(submission.name.slice(0, 120));
   const safeSubject = escapeHtml(submission.subject.slice(0, 160));
@@ -61,7 +36,7 @@ exports.handler = async function handler(event) {
   };
   if (submission.id) headers['Idempotency-Key'] = `contact-${submission.id}`;
 
-  const response = await fetch(RESEND_ENDPOINT, {
+  const response = await fetchImpl(RESEND_ENDPOINT, {
     method: 'POST',
     headers,
     body: JSON.stringify({
@@ -75,12 +50,18 @@ exports.handler = async function handler(event) {
 
   if (!response.ok) {
     const detail = await response.text();
-    console.error('Resend rejected the contact email.', { status: response.status, detail });
-    return { statusCode: 502, body: 'Email delivery failed.' };
+    throw new Error(`Resend rejected the contact email (${response.status}): ${detail}`);
   }
+}
 
-  return { statusCode: 200, body: 'Contact email sent.' };
+export default {
+  async formSubmitted(event) {
+    const submission = parseSubmission(event);
+    if (submission.formName !== 'contact') return;
+    if (!submission.name || !submission.subject || !submission.message) {
+      throw new Error(`Contact submission ${submission.id || '(unknown)'} is missing a required field.`);
+    }
+    await deliverContactEmail(submission);
+    console.log('Contact email delivered through Resend.', { id: submission.id });
+  }
 };
-
-exports.parseSubmission = parseSubmission;
-exports.escapeHtml = escapeHtml;

@@ -33,9 +33,13 @@ for (const marker of ['name="contact"', 'data-netlify="true"', 'name="name"', 'n
   if (!contact.includes(marker)) errors.push(`contact.html: missing ${marker}`);
 }
 
-const deliveryFunction = path.join(root, 'netlify/functions/submission-created.js');
+const deliveryFunction = path.join(root, 'netlify/functions/contact-submission.mjs');
 if (!fs.existsSync(deliveryFunction)) errors.push('Netlify form delivery function is missing');
-else if (!fs.readFileSync(deliveryFunction, 'utf8').includes('process.env.RESEND')) errors.push('Netlify form delivery function must use RESEND environment variable');
+else {
+  const delivery = fs.readFileSync(deliveryFunction, 'utf8');
+  if (!delivery.includes('process.env.RESEND')) errors.push('Netlify form delivery function must use RESEND environment variable');
+  if (!delivery.includes('formSubmitted(event)')) errors.push('Netlify form delivery function must subscribe to the formSubmitted event');
+}
 
 if (errors.length) {
   console.error(errors.join('\n'));

@@ -17,5 +17,6 @@
     success.hidden = false;
     success.focus();
     window.history.replaceState({}, document.title, window.location.pathname);
+    window.alert('Your message was sent. We will be in touch soon.');
   }
 }());
