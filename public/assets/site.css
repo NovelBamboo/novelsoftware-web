@@ -232,10 +232,11 @@ input:focus, select:focus, textarea:focus, a:focus-visible, button:focus-visible
 .original-visual::after { content: ""; position: absolute; inset: 0; background: rgba(7, 11, 17, .08); pointer-events: none; }
 .original-visual figcaption { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 24px; color: rgba(255,255,255,.82); font-size: 13px; line-height: 18px; }
 .original-panel { min-width: 0; display: flex; flex-direction: column; padding: clamp(32px, 5vw, 72px); background: #f2f7fa; }
-.original-nav { align-self: flex-end; display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: clamp(48px, 7vw, 96px); font-size: 14px; }
+.original-masthead { display: flex; align-items: baseline; justify-content: space-between; gap: 40px; margin-bottom: clamp(48px, 7vw, 96px); }
+.original-nav { display: flex; flex-wrap: wrap; gap: 24px; margin: 0; font-size: 14px; }
 .original-nav a { text-decoration: none; }
 .original-nav a:hover { color: var(--blue); }
-.original-brand { display: block; width: fit-content; color: #303235; font-size: clamp(40px, 4.7vw, 76px); line-height: .95; font-weight: 800; letter-spacing: -.045em; text-decoration: none; }
+.original-brand { display: block; flex: 0 0 auto; color: #303235; font-size: clamp(36px, 3.5vw, 56px); line-height: .95; font-weight: 800; letter-spacing: -.045em; text-decoration: none; }
 .original-brand span { color: var(--red); }
 .original-rule { width: 80px; height: 6px; margin-top: 40px; background: #303235; }
 .original-kicker { margin: clamp(48px, 7vw, 88px) 0 0; color: #777781; font-size: 18px; line-height: 24px; }
@@ -255,7 +256,8 @@ input:focus, select:focus, textarea:focus, a:focus-visible, button:focus-visible
   .original-frame { min-height: 100svh; grid-template-columns: 1fr; }
   .original-visual { min-height: 48svh; }
   .original-panel { padding: 32px 20px 48px; }
-  .original-nav { align-self: flex-start; margin-bottom: 56px; gap: 16px 24px; }
+  .original-masthead { align-items: flex-start; margin-bottom: 56px; }
+  .original-nav { justify-content: flex-end; gap: 12px 18px; }
   .original-brand { font-size: clamp(38px, 11vw, 64px); }
   .original-kicker { margin-top: 56px; }
   .original-panel h1 { font-size: clamp(40px, 11vw, 60px); }
