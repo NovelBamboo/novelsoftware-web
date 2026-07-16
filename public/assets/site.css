@@ -119,3 +119,100 @@ input:focus, select:focus, textarea:focus, a:focus-visible, button:focus-visible
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Home — consulting introduced as a product category */
+.home { --signal: #ff4f19; background: #f1f0eb; }
+.home-header { background: rgba(241,240,235,.9); }
+.home .brand { font-size: 1.2rem; letter-spacing: -.055em; }
+.home .brand span, .home-footer strong span { color: var(--signal); }
+.home .nav-action { color: var(--ink); border-bottom: 1px solid var(--ink); }
+.release-mark, .section-index { margin: 0; color: #6b6c68; font-size: .7rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.release-mark { display: flex; justify-content: space-between; width: min(300px, 100%); }
+.release-mark span { color: var(--signal); }
+.launch { min-height: 130svh; padding-top: clamp(5rem, 10vw, 9rem); }
+.launch h1 { margin: 2rem 0 0; font-size: clamp(4.2rem, 11vw, 10.5rem); font-weight: 610; line-height: .79; letter-spacing: -.09em; }
+.launch h1 em, .manifesto-line em { color: var(--signal); font-style: normal; }
+.launch-copy { max-width: 610px; margin: 3rem 0 0 auto; font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.45; }
+.launch-link { display: flex; justify-content: space-between; width: min(610px, 100%); margin: 2rem 0 0 auto; padding-block: 1rem; border-top: 1px solid var(--ink); font-size: .9rem; text-decoration: none; }
+.instrument { width: min(100%, 990px); margin: 10rem auto 0; overflow: hidden; border: 1px solid #252a2e; border-radius: 28px; background: #101419; color: white; box-shadow: 0 70px 100px rgba(25,30,35,.2); }
+.instrument-bar { display: flex; justify-content: space-between; padding: 1rem 1.35rem; border-bottom: 1px solid #34383d; color: #b7bbc0; font-size: .7rem; letter-spacing: .06em; }
+.instrument-status { display: flex; align-items: center; gap: .5rem; }
+.instrument-status i { width: 7px; height: 7px; border-radius: 50%; background: #60d394; }
+.instrument-body { padding: clamp(2rem, 6vw, 5.5rem); }
+.instrument-label { margin: 0 0 3rem; color: #7d858d; font-size: .68rem; letter-spacing: .16em; }
+.instrument-prompt { margin: 0; font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 480; line-height: .98; letter-spacing: -.06em; }
+.instrument-input { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 5rem; padding: 1.2rem 1.4rem; border: 1px solid #596069; border-radius: 14px; color: #dfe2e5; font-size: clamp(.92rem, 2vw, 1.1rem); }
+.instrument-input b { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 50%; background: white; color: #101419; }
+.instrument-meta { display: flex; justify-content: space-between; gap: 2rem; margin-top: 1rem; color: #747b83; font-size: .68rem; }
+.manifesto { min-height: 100svh; display: grid; align-items: center; background: #101419; color: white; }
+.manifesto-inner { padding-block: 8rem; }
+.manifesto .section-index { margin-bottom: 8rem; color: #747b83; }
+.manifesto-line { margin: 0; font-size: clamp(3.2rem, 8vw, 8.2rem); font-weight: 560; letter-spacing: -.075em; line-height: .95; }
+.muted-line { color: #4d5359; }
+.sequence { padding-block: 12rem; }
+.sequence-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+.sequence h2, .chooser h2, .installation h2, .finale h2 { margin: 0; font-size: clamp(3rem, 7vw, 7rem); font-weight: 570; line-height: .92; letter-spacing: -.075em; }
+.sequence-list { width: min(100%, 780px); margin: 8rem 0 0 auto; }
+.sequence-list article { display: grid; grid-template-columns: 100px 1fr; padding: 2.3rem 0; border-top: 1px solid #a9aaa5; }
+.sequence-list article span { color: var(--signal); font-size: .74rem; font-weight: 750; text-transform: uppercase; letter-spacing: .1em; }
+.sequence-list article p { margin: 0; font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: 1.25; letter-spacing: -.025em; }
+.proof-stage { padding-block: 11rem; background: #deddd7; }
+.proof-request { display: grid; grid-template-columns: 1fr 2fr; margin-top: 6rem; }
+.proof-request span { color: var(--signal); font-size: .75rem; font-weight: 750; text-transform: uppercase; letter-spacing: .1em; }
+.proof-request p { margin: 0; font-size: clamp(2.6rem, 6vw, 6rem); line-height: .95; letter-spacing: -.06em; }
+.proof-line { height: 14rem; width: 1px; margin: 4rem auto; background: #999b96; position: relative; }
+.proof-line::after { content: ""; position: absolute; bottom: 0; left: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--signal); }
+.proof-output { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #aaa; border: 1px solid #aaa; }
+.proof-output > div { padding: 2.2rem; background: #f1f0eb; }
+.proof-number { font-size: clamp(3rem, 6vw, 6rem); font-weight: 540; letter-spacing: -.07em; }
+.proof-output p { margin: 1rem 0 0; color: #62635f; font-size: .88rem; }
+.proof-note { max-width: 560px; margin: 2rem 0 0 auto; color: #777873; font-size: .72rem; }
+.chooser { padding-block: 12rem; }
+.chooser h2 { margin-top: 4rem; }
+.choice-list { margin-top: 9rem; border-top: 1px solid var(--ink); }
+.choice-row { display: grid; grid-template-columns: 60px 1.1fr 1.5fr 1.3fr 30px; align-items: center; gap: 1rem; min-height: 150px; border-bottom: 1px solid var(--ink); text-decoration: none; transition: color 180ms ease, padding 180ms ease; }
+.choice-row:hover { color: var(--signal); padding-inline: 1rem; }
+.choice-count, .choice-for, .choice-result { font-size: .74rem; }
+.choice-name { font-size: clamp(2.4rem, 5vw, 5rem); font-weight: 570; letter-spacing: -.06em; }
+.choice-for { color: #696a66; text-transform: uppercase; letter-spacing: .08em; }
+.choice-result { color: #696a66; }
+.choice-arrow { font-size: 1.5rem; }
+.installation { padding-block: 11rem; background: var(--signal); color: #101419; }
+.installation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; }
+.installation .section-index { color: #55200d; }
+.installation h2 { margin-top: 3rem; }
+.installation-grid > div > p:last-child { max-width: 500px; margin-top: 3rem; font-size: 1.2rem; }
+.installation-steps { margin: 0; padding: 0; list-style: none; border-top: 1px solid #61230e; }
+.installation-steps li { display: grid; grid-template-columns: 50px 1fr; gap: 1rem; padding: 1.8rem 0; border-bottom: 1px solid #61230e; }
+.installation-steps li > span { font-size: .7rem; }
+.installation-steps strong { font-size: 1.35rem; }
+.installation-steps p { margin: .25rem 0 0; color: #55200d; }
+.finale { min-height: 110svh; display: flex; flex-direction: column; justify-content: center; padding-block: 10rem; }
+.finale h2 { margin-top: 5rem; }
+.finale > p:not(.section-index) { margin: 1rem 0 0; color: var(--signal); font-size: clamp(3rem, 7vw, 7rem); font-weight: 570; line-height: .92; letter-spacing: -.075em; }
+.finale-action { display: flex; justify-content: space-between; width: min(100%, 700px); margin: 6rem 0 0 auto; padding: 1.4rem 0; border-block: 1px solid var(--ink); font-size: 1.2rem; text-decoration: none; }
+.home-footer { background: #101419; color: white; border: 0; }
+.home-footer .footer-links a, .home-footer .fine-print { color: #8c9298; }
+
+@media (max-width: 800px) {
+  .launch { min-height: auto; padding-bottom: 7rem; }
+  .launch h1 { font-size: clamp(4rem, 19vw, 7rem); line-height: .82; }
+  .launch-copy, .launch-link { margin-left: 0; }
+  .instrument { margin-top: 6rem; border-radius: 18px; }
+  .instrument-meta { flex-direction: column; gap: .3rem; }
+  .manifesto .section-index { margin-bottom: 5rem; }
+  .sequence, .chooser { padding-block: 8rem; }
+  .sequence-intro, .proof-request, .installation-grid { grid-template-columns: 1fr; }
+  .sequence-intro { gap: 3rem; }
+  .sequence-list { margin-top: 6rem; }
+  .sequence-list article { grid-template-columns: 65px 1fr; }
+  .proof-stage { padding-block: 8rem; }
+  .proof-request { gap: 2rem; }
+  .proof-line { height: 8rem; }
+  .proof-output { grid-template-columns: 1fr; }
+  .choice-list { margin-top: 6rem; }
+  .choice-row { grid-template-columns: 45px 1fr 28px; padding-block: 1.5rem; }
+  .choice-for, .choice-result { grid-column: 2; }
+  .choice-arrow { grid-column: 3; grid-row: 1 / span 3; }
+  .installation-grid { gap: 6rem; }
+}
