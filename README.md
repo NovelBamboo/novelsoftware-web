@@ -20,3 +20,32 @@ npx serve .
 ```sh
 npm run check
 ```
+
+---
+
+# Local Server 
+
+From the project directory, run:
+
+```bash
+cd /Users/novelbamboo/Desktop/github/novelsoftware-web
+npx serve . -l 4173
+```
+
+Then open:
+
+[http://localhost:4173](http://localhost:4173)
+
+If `serve` is unavailable, use Python:
+
+```bash
+python3 -m http.server 4173
+```
+
+Validate the site with:
+
+```bash
+npm test
+```
+
+Note: Netlify Forms are detected during Netlify deployment. Locally, submitting the Knowledge Audit form only navigates to the thank-you page; it does not record a submission.
