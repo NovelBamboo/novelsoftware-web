@@ -264,3 +264,30 @@ input:focus, select:focus, textarea:focus, a:focus-visible, button:focus-visible
   .original-products { grid-template-columns: 1fr; gap: 24px; }
   .original-cta { margin-top: 48px; }
 }
+
+/* Product pages: the same master, with horizontal content slides */
+.product-panel { overflow: hidden; }
+.product-panel .original-masthead { flex: 0 0 auto; }
+.product-panel .original-nav a[aria-current="page"] { color: var(--blue); font-weight: 700; }
+.product-visual img { object-position: center; }
+.product-visual--wro img { object-position: 58% center; }
+.product-slides { flex: 1 1 auto; min-height: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #aeb8bf transparent; }
+.product-slide { flex: 0 0 100%; min-width: 100%; display: flex; flex-direction: column; justify-content: center; padding: 32px 4px 40px; scroll-snap-align: start; }
+.slide-count { margin: 0 0 32px; color: #777781; font-size: 14px; line-height: 20px; font-weight: 700; }
+.product-slide h1, .product-slide h2 { max-width: 850px; margin: 0; font-size: clamp(48px, 5.5vw, 82px); line-height: .95; letter-spacing: -.045em; }
+.slide-copy { max-width: 660px; margin: 40px 0 0; color: #5d6369; font-size: 20px; line-height: 29px; }
+.slide-next { display: flex; justify-content: space-between; width: min(100%, 420px); margin-top: 56px; padding-block: 16px; border-block: 1px solid #303235; color: var(--blue); font-weight: 700; text-decoration: none; }
+.slide-points { max-width: 760px; margin-top: 48px; border-top: 1px solid #aeb8bf; }
+.slide-points p { display: grid; grid-template-columns: 140px 1fr; gap: 24px; margin: 0; padding-block: 18px; border-bottom: 1px solid #aeb8bf; }
+.slide-points strong { font-size: 18px; }
+.slide-points span { color: #5d6369; }
+.slide-actions { display: flex; justify-content: space-between; gap: 32px; max-width: 760px; margin-top: 48px; }
+.slide-actions a { color: var(--blue); font-weight: 700; text-decoration: none; }
+
+@media (max-width: 900px) {
+  .product-panel { min-height: 72svh; }
+  .product-slide { min-height: 560px; padding-block: 32px 48px; }
+  .product-slide h1, .product-slide h2 { font-size: clamp(46px, 13vw, 68px); }
+  .slide-copy { font-size: 18px; line-height: 26px; }
+  .slide-points p { grid-template-columns: 1fr; gap: 4px; }
+}

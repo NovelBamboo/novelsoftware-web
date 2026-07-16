@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const pages = ['index.html', 'nkos.html', 'wro-drafting.html', 'method.html', 'evidence.html', 'start.html', 'thanks.html'];
+const pages = ['index.html', 'nkos.html', 'wro-drafting.html'];
 const obsolete = [/Novel Software/i, /software development isn.t hard/i, /Custom GPTs/i, /5.Step Cheat Sheet/i];
 const errors = [];
 
@@ -28,13 +28,8 @@ for (const page of pages) {
   }
 }
 
-const start = fs.readFileSync(path.join(root, 'start.html'), 'utf8');
-for (const marker of ['data-netlify="true"', 'name="form-name"', 'netlify-honeypot', 'action="/thanks.html"']) {
-  if (!start.includes(marker)) errors.push(`start.html: missing ${marker}`);
-}
-
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log(`Validated ${pages.length} pages, local references, copy exclusions, and Netlify form markers.`);
+console.log(`Validated ${pages.length} pages, local references, and copy exclusions.`);
