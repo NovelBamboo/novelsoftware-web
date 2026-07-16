@@ -216,3 +216,152 @@ input:focus, select:focus, textarea:focus, a:focus-visible, button:focus-visible
   .choice-arrow { grid-column: 3; grid-row: 1 / span 3; }
   .installation-grid { gap: 6rem; }
 }
+
+/* Vitsoe-calibrated typography and spatial system */
+:root {
+  --paper: #ffffff;
+  --ink: #111111;
+  --muted: #505050;
+  --line: #c8c8c8;
+  --blue: #0078b8;
+  --blue-soft: #edf6fa;
+  --max: 1440px;
+  --reading: 680px;
+  --radius: 0;
+}
+
+body {
+  background: var(--paper);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.shell { width: min(calc(100% - 96px), var(--max)); }
+.site-header { position: relative; background: #fff; backdrop-filter: none; }
+.nav { min-height: 96px; }
+.brand { font-size: 24px; line-height: 32px; letter-spacing: -.02em; }
+.nav-links { gap: 32px; font-size: 17px; line-height: 24px; }
+.nav-links a { color: var(--ink); }
+.button {
+  min-height: 48px;
+  border-radius: 0;
+  padding: 11px 18px;
+  background: transparent;
+  color: var(--blue);
+  border-color: var(--blue);
+  font-size: 17px;
+  line-height: 24px;
+}
+.button:hover { transform: none; background: var(--blue-soft); }
+.eyebrow, .number { color: var(--muted); font-size: 14px; line-height: 20px; letter-spacing: 0; }
+.hero { min-height: auto; padding-block: 96px; }
+.hero h1, .page-hero h1 { max-width: 920px; font-size: clamp(48px, 5vw, 72px); line-height: 1.05; letter-spacing: -.035em; }
+.page-hero { padding-block: 96px 72px; }
+.lede { max-width: 680px; margin-top: 32px; font-size: 21px; line-height: 32px; }
+.chapter { min-height: auto; padding-block: 96px; }
+.chapter h2 { max-width: 920px; font-size: clamp(36px, 3.2vw, 48px); line-height: 1.08; letter-spacing: -.025em; }
+.chapter-copy { margin-top: 32px; font-size: 17px; line-height: 24px; }
+.outcomes, .product-grid, .system-flow, .workflow, .metrics, .before-after { margin-top: 64px; }
+.outcomes { gap: 48px; }
+.outcome { padding-top: 16px; }
+.outcome h3 { font-size: 24px; line-height: 32px; letter-spacing: 0; font-weight: 400; }
+.product { min-height: 360px; border-radius: 0; }
+.product h3 { font-size: clamp(40px, 4vw, 56px); line-height: 1; letter-spacing: -.03em; }
+.system-flow { border-radius: 0; }
+.system-flow > div { min-height: 144px; }
+.state, .metric { border-radius: 0; }
+.workflow-step { padding-block: 24px; }
+.workflow-step h3 { font-size: 24px; line-height: 32px; font-weight: 400; }
+.site-footer { padding-block: 64px; background: #f2f2f2; }
+
+/* Homepage */
+.home { --signal: #0078b8; background: #fff; }
+.home-header { background: #fff; }
+.home .brand { font-size: 30px; line-height: 40px; letter-spacing: -.04em; }
+.home .brand span, .home-footer strong span { color: var(--signal); }
+.home .nav-action { color: var(--blue); border: 0; font-weight: 700; }
+.release-mark, .section-index { color: var(--muted); font-size: 14px; line-height: 20px; letter-spacing: 0; text-transform: none; }
+.release-mark span { color: var(--blue); }
+.launch { min-height: auto; padding-block: 72px 96px; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; }
+.launch > .release-mark { grid-column: 1 / -1; }
+.launch h1 { grid-column: 1 / 9; margin-top: 48px; font-size: clamp(56px, 6.5vw, 96px); line-height: .96; letter-spacing: -.045em; font-weight: 700; }
+.launch h1 em { color: var(--ink); }
+.launch-copy { grid-column: 9 / -1; align-self: end; max-width: 420px; margin: 48px 0 0; font-size: 21px; line-height: 32px; }
+.launch-link { grid-column: 9 / -1; width: 100%; margin: 24px 0 0; color: var(--blue); border-top-color: var(--line); font-size: 17px; line-height: 24px; font-weight: 700; }
+.instrument { grid-column: 3 / 12; width: 100%; margin: 96px 0 0; border-radius: 0; box-shadow: none; }
+.instrument-bar { padding: 12px 16px; font-size: 14px; line-height: 20px; }
+.instrument-body { padding: 48px; }
+.instrument-label { margin-bottom: 48px; font-size: 14px; line-height: 20px; letter-spacing: 0; }
+.instrument-prompt { font-size: clamp(40px, 4.5vw, 64px); line-height: 1.05; letter-spacing: -.03em; }
+.instrument-input { margin-top: 64px; border-radius: 0; padding: 12px 16px; font-size: 17px; line-height: 24px; }
+.instrument-meta { font-size: 14px; line-height: 20px; }
+.manifesto { min-height: auto; padding-block: 120px; }
+.manifesto-inner { padding-block: 0; }
+.manifesto .section-index { margin-bottom: 64px; }
+.manifesto-line { font-size: clamp(48px, 5vw, 72px); line-height: 1.05; letter-spacing: -.035em; }
+.sequence, .chooser { padding-block: 96px; }
+.sequence-intro { grid-template-columns: repeat(12, 1fr); column-gap: 24px; }
+.sequence-intro .section-index { grid-column: 1 / 4; }
+.sequence h2 { grid-column: 4 / 11; }
+.sequence h2, .chooser h2, .installation h2, .finale h2 { font-size: clamp(40px, 4vw, 56px); line-height: 1.05; letter-spacing: -.03em; }
+.sequence-list { margin-top: 72px; }
+.sequence-list article { padding-block: 24px; }
+.sequence-list article p { font-size: 24px; line-height: 32px; letter-spacing: 0; }
+.proof-stage { padding-block: 96px; background: #f2f2f2; }
+.proof-request { grid-template-columns: repeat(12, 1fr); column-gap: 24px; margin-top: 64px; }
+.proof-request span { grid-column: 1 / 4; font-size: 14px; line-height: 20px; letter-spacing: 0; }
+.proof-request p { grid-column: 4 / 11; font-size: clamp(40px, 4vw, 56px); line-height: 1.05; letter-spacing: -.03em; }
+.proof-line { height: 96px; margin-block: 48px; }
+.proof-output > div { padding: 24px; background: #fff; }
+.proof-number { font-size: clamp(40px, 4vw, 56px); line-height: 1; letter-spacing: -.03em; }
+.proof-output p, .proof-note { font-size: 14px; line-height: 20px; }
+.chooser h2 { margin-top: 48px; }
+.choice-list { margin-top: 72px; }
+.choice-row { min-height: 112px; grid-template-columns: 48px 1fr 1.4fr 1.2fr 24px; }
+.choice-row:hover { padding-inline: 0; color: var(--blue); }
+.choice-name { font-size: 40px; line-height: 48px; letter-spacing: -.025em; }
+.choice-count, .choice-for, .choice-result { font-size: 14px; line-height: 20px; }
+.installation { padding-block: 96px; background: #f2f2f2; }
+.installation-grid { gap: 96px; }
+.installation .section-index, .installation-steps p { color: var(--muted); }
+.installation h2 { margin-top: 48px; }
+.installation-grid > div > p:last-child { margin-top: 32px; font-size: 17px; line-height: 24px; }
+.installation-steps { border-top-color: var(--line); }
+.installation-steps li { padding-block: 24px; border-bottom-color: var(--line); }
+.installation-steps strong { font-size: 24px; line-height: 32px; font-weight: 400; }
+.finale { min-height: auto; padding-block: 120px; }
+.finale h2 { margin-top: 64px; }
+.finale > p:not(.section-index) { margin-top: 8px; color: var(--blue); font-size: clamp(40px, 4vw, 56px); line-height: 1.05; letter-spacing: -.03em; }
+.finale-action { margin-top: 64px; padding-block: 16px; color: var(--blue); font-size: 21px; line-height: 32px; }
+.home-footer { background: #f2f2f2; color: var(--ink); }
+.home-footer .footer-links a, .home-footer .fine-print { color: var(--ink); }
+
+@media (max-width: 800px) {
+  .shell { width: min(calc(100% - 40px), var(--max)); }
+  .nav { min-height: 72px; }
+  .nav-links { top: 72px; padding-inline: 20px; }
+  .launch { padding-block: 48px 72px; grid-template-columns: 1fr; }
+  .launch > .release-mark, .launch h1, .launch-copy, .launch-link, .instrument { grid-column: 1; }
+  .launch h1 { margin-top: 40px; font-size: clamp(48px, 15vw, 72px); line-height: .98; }
+  .launch-copy { margin-top: 40px; }
+  .instrument { margin-top: 72px; }
+  .instrument-body { padding: 32px 24px; }
+  .instrument-prompt { font-size: 36px; line-height: 40px; }
+  .manifesto { padding-block: 88px; }
+  .manifesto .section-index { margin-bottom: 48px; }
+  .manifesto-line { font-size: 40px; line-height: 44px; }
+  .sequence, .chooser, .proof-stage, .installation { padding-block: 72px; }
+  .sequence-intro { display: block; }
+  .sequence h2 { margin-top: 40px; }
+  .sequence-list { margin-top: 56px; }
+  .sequence-list article { grid-template-columns: 64px 1fr; }
+  .sequence-list article p { font-size: 21px; line-height: 28px; }
+  .proof-request { display: block; }
+  .proof-request p { margin-top: 40px; }
+  .choice-list { margin-top: 56px; }
+  .choice-row { min-height: 0; }
+  .installation-grid { gap: 56px; }
+  .finale { padding-block: 88px; }
+}
